@@ -46,8 +46,8 @@ public class SUnKMaP extends HttpServlet {
             out.println("<p>");
             out.println("<br />");
             for (int i = 0; i < nbKmaP; i++) {
-                out.println(i + 1 + " kilomètre" + (i != 0 ? "s " : " ") + "à pied, ça use , ça use,<br />\n"
-                + "kilomètre" + (i != 0 ? "s " : " ") + "à pied, ça use les souliers <br />");
+                out.println(i + 1 + " kilomètre" + (i != 0 ? "s " : " ") + "à pied, ça use , ça use,<br />\n" +
+                i + 1 + "kilomètre" + (i != 0 ? "s " : " ") + "à pied, ça use les souliers <br />");
             }
             out.println("</p>");
             out.println("</body>");
