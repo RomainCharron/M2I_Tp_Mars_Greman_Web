@@ -8,6 +8,10 @@
         <servlet-name>SUnKMaP</servlet-name>
         <servlet-class>com.m2i.charron.web.greman_tp_web_mars.Servlet.SUnKMaP</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>SMoyenne</servlet-name>
+        <servlet-class>com.m2i.charron.web.greman_tp_web_mars.Servlet.SMoyenne</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>SSapins</servlet-name>
         <url-pattern>/IndexProgram/ProgramSapins</url-pattern>
@@ -15,6 +19,10 @@
     <servlet-mapping>
         <servlet-name>SUnKMaP</servlet-name>
         <url-pattern>/IndexProgram/ProgramUnKMaP</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SMoyenne</servlet-name>
+        <url-pattern>/IndexProgram/ProgramMoyenne</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
