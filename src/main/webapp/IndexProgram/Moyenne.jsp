@@ -30,7 +30,7 @@
          </form><%
         if (nbValeur != 0) {
                %>
-        <form method="get" action="#">
+        <form method="get" action="ProgramMoyenne">
             <p>
                 Saisire les valeur pour la moyene<br />
                 ---------------------------------<br />

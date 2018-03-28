@@ -32,6 +32,29 @@ public class SMoyenne extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
+            
+            String sapinsType = request.getParameter("sapinsType");
+            int nbValeur =  Integer.parseInt(request.getParameter("nbValeur")); //request.getParameter("sapinsSize");
+            int[] tabValeur = new int[nbValeur];
+            
+            int tmpint = 0;
+            
+//            for (int i = 0; i < nbValeur; i++) {
+//                
+//                tabValeur[i] = Integer.parseInt(request.getParameter("MoyeneValeur" + i));
+//                
+//            }
+//            for (int i = 0; i < tabValeur.length; i++) {
+//                tmpint += tabValeur[i] ;
+//            }
+//            tmpint /= nbValeur;
+            for (int i = 0; i < nbValeur; i++) {
+                
+                tmpint += Integer.parseInt(request.getParameter("MoyeneValeur" + i));
+                
+            }
+            tmpint /= nbValeur;
+            
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
@@ -39,6 +62,12 @@ public class SMoyenne extends HttpServlet {
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Servlet SMoyenne at " + request.getContextPath() + "</h1>");
+            out.println("<p>");
+            out.println("La moyen est de " + tmpint);
+//            for (int i = 0; i < tabValeur.length; i++) {
+//                out.println(tabValeur[i] + " <br />");
+//            }
+            out.println("</p>");
             out.println("</body>");
             out.println("</html>");
         }
