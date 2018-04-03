@@ -29,12 +29,12 @@
             </p>
          </form><%
         if (nbValeur != 0) {
-               %>
+               %> 
         <form method="get" action="ProgramMoyenne">
             <p>
                 Saisire les valeur pour la moyene<br />
                 ---------------------------------<br />
-                <input type="hidden" value="<%= nbValeur %>" name="nbValeur">
+                <--<input type="hidden" value="<%= nbValeur %>" name="nbValeur">
                <%
             }
         for (int i = 0; i < nbValeur; i++) {

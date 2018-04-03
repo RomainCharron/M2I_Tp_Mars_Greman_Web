@@ -13,39 +13,48 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>DevinerNombre</title>
     </head>
-    
-        <% 
-        
-            boolean isDoContinu = true;
-            int tmpScore = 0, valeurSaisie = 0, nbDeviner = 0;
-            String domresulte = "";
-            
-            
-            try {
-                    valeurSaisie = Integer.parseInt(request.getParameter("valeurSaisie"));
-                    nbDeviner = Integer.parseInt(request.getParameter("nbDeviner"));
-                    tmpScore = Integer.parseInt(request.getParameter("tmpScore"));
-                    
-                } catch (Exception e) {
-                    //domresulte += "Erreur " + e.getMessage() + "<br />";
-                }
+
+    <%
+
+        boolean isDoContinu = true;
+        int tmpScore = 0, valeurSaisie = 0, nbDeviner = 0;
+        String domresulte = "";
+
+        //HttpSession userSession = request.getSession(true);
+        try {
+            //if(request.getParameter("valeurSaisie") != null)
+            valeurSaisie = Integer.parseInt(request.getParameter("valeurSaisie"));
+//                    nbDeviner = Integer.parseInt(request.getParameter("nbDeviner"));
+//                    tmpScore = Integer.parseInt(request.getParameter("tmpScore"));
+
+//                    valeurSaisie = Integer.parseInt((String)userSession.getAttribute("valeurSaisie"));
+            //if(session.getAttribute("nbDeviner") != null)
+            nbDeviner = (int) (session.getAttribute("nbDeviner"));
+            //if(session.getAttribute("tmpScore") != null)
+            tmpScore = (int) (session.getAttribute("tmpScore"));
+
+        } catch (Exception e) {
+            //domresulte += "Erreur " + e.getMessage() + "<br />";
+        }
+        //if (tmpScore == 0)
+//        {
+//            tmpScore++;
+//            session.setAttribute("tmpScore", tmpScore);
+//        }
         if (nbDeviner == 0) {
             Random unRandom = new Random();
             nbDeviner = unRandom.nextInt(100);
-        }
-        else
-        {
-            if(nbDeviner != valeurSaisie)
-            {
-                 domresulte += "C'est " + (valeurSaisie < nbDeviner ? "superieur" : "Inferieur") + "";
-            }
-            else
-            {
+            // ajout de la valeur random dans la session
+            session.setAttribute("nbDeviner", nbDeviner);
+        } else {
+            if (nbDeviner != valeurSaisie) {
+                domresulte += "C'est " + (valeurSaisie < nbDeviner ? "superieur" : "Inferieur") + "";
+            } else {
                 domresulte += "Bravo tu à trouver";
                 isDoContinu = false;
             }
         }
-            %>
+    %>
     <body>
         <h1>Hello World!</h1>
         <form method="post" action="#">
@@ -53,34 +62,33 @@
                 Deviner le nombre<br />
                 <%= domresulte + "<br />"%>
                 ---------------------------------<br />
-                <% if(isDoContinu)
-                { 
-                    tmpScore++;
-               %>
-               Debug Nb <%= nbDeviner%><br />
+                <% if (isDoContinu) {
+                        tmpScore++;
+                        session.setAttribute("tmpScore", tmpScore);
+                %>
+                <!--Debug Nb <%--= nbDeviner--%><br />-->
                 <input type="hidden" value="<%= nbDeviner%>" name="nbDeviner">
                 <input type="hidden" value="<%= tmpScore%>" name="tmpScore">
                 <label for="sapinsSize">Saisir le bon nombre : <input type="text" name="valeurSaisie" /></label>
                 <input  type="submit" value="Envoyer" />
-                <%}
-                else {
+                <%} else {
                     DevinerNombre.setScore(tmpScore);
-                    
+
                 %>
-                <p>
-                    Score : <%= tmpScore%><br />
-                    Le meilleur Score est <%= DevinerNombre.getMinScore()%><br />
-                    ---------------------------------<br />
-                    Vouler vous faire une nouvelle partie ?
-                    <input formaction="#" type="submit" value="Oui" />
-                    <input formaction=".." type="submit" value="Non" />
-                    
-                </p>
-                <%}//  System.out.println("Score : " + score); formaction
-                %>
+            <p>
+                Score : <%= tmpScore%><br />
+                Le meilleur Score est <%= DevinerNombre.getMinScore()%><br />
+                ---------------------------------<br />
+                Vouler vous faire une nouvelle partie ?
+                <input formaction="#" type="submit" value="Oui" />
+                <input formaction=".." type="submit" value="Non" />
+
             </p>
-         </form>
-    </body>
+            <%}//  System.out.println("Score : " + score); formaction
+            %>
+        </p>
+    </form>
+</body>
 </html>
 <%
 
