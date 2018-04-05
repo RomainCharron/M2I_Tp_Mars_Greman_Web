@@ -6,10 +6,12 @@
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -28,10 +30,34 @@ public class Moyen2Traitement2 extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
+        //response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-            
+            int iNbValeur = 0;
+            int Moyen = 0;
+            //int [] tabValeur;
+            HttpSession sess = request.getSession(true);
+            if (sess.getAttribute("NbValeur") != null) {
+                iNbValeur = (int) sess.getAttribute("NbValeur");
+            }
+
+            //tabValeur = new int[iNbValeur];
+            for (int indValueForm = 0; indValueForm < iNbValeur; indValueForm++) {
+
+                if (request.getParameter("Valeur" + indValueForm) != null) {
+                    Moyen += Integer.parseInt(
+                            request.getParameter("Valeur" + indValueForm));
+                    //tabValeur[indValueForm] = Integer.parseInt(
+                    //        request.getParameter("Valeur" + indValueForm));
+                }
+
+            }
+            Moyen /= iNbValeur;
+            sess.setAttribute("Moyen", Moyen);
+
+            RequestDispatcher rd = request.getRequestDispatcher("Moyenne2AfficherMoy.jsp");
+            rd.forward(request, response);
+
         }
     }
 

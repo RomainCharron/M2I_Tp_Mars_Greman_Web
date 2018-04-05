@@ -5,17 +5,13 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page language="java" %>
 
-<%--
-//    session;
-//    response;
-//    request;
---%>
 <!DOCTYPE html>
 <html>
     <head>
         <title>JSP Page</title>
-        <%@include file="entete2.jsp" %>
+        <%@include file="../entete2.jsp" %>
     </head>
     <body>
         <h1>Choix du Projet </h1><br/>
@@ -30,6 +26,6 @@
                 </form>
             </div>
         </div>
-        <%@include file="pied2.jsp" %>
+        <%@include file="../pied2.jsp" %>
     </body>
 </html>

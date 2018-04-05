@@ -3,8 +3,8 @@
     Created on : 5 avr. 2018, 11:40:56
     Author     : Formation
 --%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page language="java" %>
 
 <%
 //    session;
@@ -23,7 +23,7 @@
 <html>
     <head>
         <title>Veuiller saisir les nombres</title>
-        <%@include file="entete2.jsp" %>
+        <%@include file="../entete2.jsp" %>
     </head>
     <body>
         <h1>Choix du Projet </h1><br/>
@@ -33,13 +33,13 @@
                     <p>Veuiller saisir les nombres</p><br />
                     ------------------------<br />
                     <% for (int indValueForm = 0; indValueForm < nbValeur; indValueForm++) {%>
-                    <label for="Valeur<%=indValueForm %>">Valeur <%=indValueForm %></label>
-                    <input type="text" id="Valeur<%=indValueForm %>" name="Valeur<%= indValueForm %>" required="true" /><br /><br />
+                    <label for="Valeur<%=indValueForm%>">Valeur <%=indValueForm%></label>
+                    <input type="text" id="Valeur<%=indValueForm%>" name="Valeur<%= indValueForm%>" required="true" /><br /><br />
                     <% }%>
-                    <input type="submit" value="Envoyer" />
+                    <input type="submit" value="Valider" />
                 </form>
             </div>
         </div>
-        <%@include file="pied2.jsp" %>
+        <%@include file="../pied2.jsp" %>
     </body>
 </html>
