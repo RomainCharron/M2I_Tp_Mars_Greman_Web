@@ -12,6 +12,10 @@
         <servlet-name>SMoyenne</servlet-name>
         <servlet-class>com.m2i.charron.web.greman_tp_web_mars.Servlet.SMoyenne</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Moyen2Traitement</servlet-name>
+        <servlet-class>com.m2i.charron.web.greman_tp_web_mars.Servlet.Moyen2Traitement</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>SSapins</servlet-name>
         <url-pattern>/IndexProgram/ProgramSapins</url-pattern>
@@ -23,6 +27,10 @@
     <servlet-mapping>
         <servlet-name>SMoyenne</servlet-name>
         <url-pattern>/IndexProgram/ProgramMoyenne</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Moyen2Traitement</servlet-name>
+        <url-pattern>/Moyen2Traitement</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
