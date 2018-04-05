@@ -16,6 +16,10 @@
         <servlet-name>Moyen2Traitement</servlet-name>
         <servlet-class>com.m2i.charron.web.greman_tp_web_mars.Servlet.Moyen2Traitement</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Moyen2Traitement2</servlet-name>
+        <servlet-class>Moyen2Traitement2</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>SSapins</servlet-name>
         <url-pattern>/IndexProgram/ProgramSapins</url-pattern>
@@ -30,7 +34,11 @@
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>Moyen2Traitement</servlet-name>
-        <url-pattern>/Moyen2Traitement</url-pattern>
+        <url-pattern>/Traitement01Moyen02</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Moyen2Traitement2</servlet-name>
+        <url-pattern>/Traitement02Moyen02</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

@@ -5,6 +5,12 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+
+<%--
+//    session;
+//    response;
+//    request;
+--%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -15,18 +21,12 @@
         <h1>Choix du Projet </h1><br/>
         <div id="Body">
             <div class="form">
-                <form action="Moyenne2" method="post" id="form1">
+                <form action="Traitement01Moyen02" method="post" id="form1">
                     <p>Saisir le nombre de valeur</p><br />
                     ------------------------<br />
                     <label for="NbValeur">Nombre de valeur</label>
-                    <input type="text" id="NbValeur" name="NbValeur" required="true" />
+                    <input type="text" id="NbValeur" name="NbValeur" required="true" /><br />
                     <input type="submit" value="Envoyer" />
-                </form>
-                <form action="Moyenne2" method="post" id="form2">
-                    <p>Veuiller saisir les nombres</p><br />
-                    ------------------------<br />
-                    <label for="Valeur00">Nombre de valeur</label>
-                    <input type="text" id="Valeur00" name="Valeur00" required="true" />
                 </form>
             </div>
         </div>

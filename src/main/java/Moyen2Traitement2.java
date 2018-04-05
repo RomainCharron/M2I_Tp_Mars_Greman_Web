@@ -3,22 +3,19 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.m2i.charron.web.greman_tp_web_mars.Servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 /**
  *
  * @author Formation
  */
-public class Moyen2Traitement extends HttpServlet {
+public class Moyen2Traitement2 extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -32,17 +29,10 @@ public class Moyen2Traitement extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        int iNbValeur = 0 ;
-        HttpSession sess = request.getSession(true);
-        if(request.getParameter("NbValeur") != null)
-        {
-            iNbValeur = Integer.parseInt(
-                    request.getParameter("NbValeur"));
+        try (PrintWriter out = response.getWriter()) {
+            /* TODO output your page here. You may use following sample code. */
+            
         }
-        sess.setAttribute("NbValeur", iNbValeur);
-        
-        RequestDispatcher rd = request.getRequestDispatcher("Moyenne2SaisierNombre.jsp");
-        rd.forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -57,8 +47,6 @@ public class Moyen2Traitement extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-//        RequestDispatcher rd = request.getRequestDispatcher("Moyenne2.jsp");
-//        rd.forward(request, response);
         processRequest(request, response);
     }
 
