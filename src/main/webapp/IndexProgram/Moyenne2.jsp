@@ -18,8 +18,9 @@
         <div id="Body">
             <div class="form">
                 <form action="Traitement01Moyen02" method="post" id="form1">
-                    <p>Saisir le nombre de valeur</p><br />
+                    <p>Saisir le nombre de valeur<br />
                     ------------------------<br />
+                    </p>
                     <label for="NbValeur">Nombre de valeur</label>
                     <input type="text" id="NbValeur" name="NbValeur" required="true" /><br />
                     <input type="submit" value="Envoyer" />

@@ -31,7 +31,7 @@ public class Moyen2Traitement extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
+        //response.setContentType("text/html;charset=UTF-8");
         int iNbValeur = 0 ;
         HttpSession sess = request.getSession(true);
         if(request.getParameter("NbValeur") != null)
