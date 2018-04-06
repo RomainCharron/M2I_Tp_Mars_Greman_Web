@@ -4,11 +4,11 @@
     Author     : Formation
 --%>
 
-
+<%@page language="java" %>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <!-- Chargement css de base -->
-        <link rel="stylesheet" media="all" type="text/css" href="src/css/normalize.css" />
+        <link rel="stylesheet" media="all" type="text/css" href="<%=pageContext.getServletContext().getContextPath() %>/src/css/normalize.css" />
         <!-- Chargement de mes feuilles css -->
-        <link rel="stylesheet" media="all" type="text/css" href="src/css/index.css" />
+        <link rel="stylesheet" media="all" type="text/css" href="<%=pageContext.getServletContext().getContextPath() %>/src/css/index.css" />
         
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
